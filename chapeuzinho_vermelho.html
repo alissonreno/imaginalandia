@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imaginalândia - Chapeuzinho Vermelho</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="canonical" href="https://www.imaginalandia.com/">
+    <meta property="og:title" content="Imaginalândia - Portal Infantil">
+    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
+    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .navbar {
+            background-color: #ffcc00;
+        }
+        .nav-link {
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            color: #ffcc00;
+        }
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .story {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .choice {
+            margin-top: 20px;
+        }
+        .story img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="index.html">Imaginalândia</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
+				<li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+				<li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
+				<li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
+				<li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+				<li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
+				<li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+			</ul>
+		</div>
+	</nav>
+    <div class="container content">
+        <div class="story">
+            <h1>Chapeuzinho Vermelho</h1>
+            <img src="img/chapeuzinho_vermelho.jpg" alt="Chapeuzinho Vermelho">
+            <p>Era uma vez uma menina adorável conhecida como Chapeuzinho Vermelho, por causa do capuz vermelho que sempre usava. Um dia, sua mãe pediu que ela levasse uma cesta de guloseimas para sua avó, que morava do outro lado da floresta...</p>
+            <p>Enquanto caminhava pela floresta, Chapeuzinho Vermelho encontrou um lobo. O lobo perguntou aonde ela estava indo, e ela, ingenuamente, respondeu: "Estou indo visitar minha avó que está doente"...</p>
+            <img src="img/lobo_floresta.jpg" alt="Lobo na Floresta">
+            <p>O lobo, sendo esperto, correu à frente e chegou primeiro à casa da avó. Ele trancou a avó no armário e se disfarçou com suas roupas, deitando-se na cama, esperando por Chapeuzinho Vermelho...</p>
+            <img src="img/lobo_disfarcado.jpg" alt="Lobo Disfarçado de Avó">
+            <div class="choice">
+                <button class="btn btn-primary" onclick="makeChoice('a')">Chapeuzinho entra e desconfia do lobo</button>
+                <button class="btn btn-primary" onclick="makeChoice('b')">Chapeuzinho entra e não desconfia do lobo</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function makeChoice(choice) {
+            if (choice === 'a') {
+                document.querySelector('.story p:last-of-type').innerText = "Chapeuzinho Vermelho entrou e logo desconfiou do lobo. Ela gritou por ajuda, e um lenhador nas proximidades ouviu e veio ao seu resgate. O lobo fugiu, e Chapeuzinho e sua avó ficaram salvas.";
+            } else {
+                document.querySelector('.story p:last-of-type').innerText = "Chapeuzinho Vermelho entrou e não desconfiou do lobo. Ao perceber o perigo, ela tentou fugir, mas o lobo quase a pegou. Felizmente, um lenhador nas proximidades ouviu o barulho e veio ao seu resgate. O lobo fugiu, e Chapeuzinho e sua avó ficaram salvas.";
+            }
+            document.querySelector('.choice').style.display = 'none';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imaginalândia - João e o Pé de Feijão</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="canonical" href="https://www.imaginalandia.com/">
+    <meta property="og:title" content="Imaginalândia - Portal Infantil">
+    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
+    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .navbar {
+            background-color: #ffcc00;
+        }
+        .nav-link {
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            color: #ffcc00;
+        }
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .story {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .choice {
+            margin-top: 20px;
+        }
+        .story img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="index.html">Imaginalândia</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
+				<li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+				<li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
+				<li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
+				<li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+				<li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
+				<li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+			</ul>
+		</div>
+	</nav>
+    <div class="container content">
+        <div class="story">
+            <h1>João e o Pé de Feijão</h1>
+            <img src="img/joao_pe_feijao.jpg" alt="João e o Pé de Feijão">
+            <p>Era uma vez um menino chamado João, que vivia com sua mãe em uma fazenda pobre. Um dia, a mãe de João pediu que ele vendesse a vaca da família para comprar comida. No caminho, João encontrou um homem que lhe ofereceu alguns feijões mágicos em troca da vaca...</p>
+            <p>João aceitou a oferta e, ao chegar em casa, sua mãe ficou furiosa e jogou os feijões pela janela. Durante a noite, os feijões cresceram e se transformaram em um enorme pé de feijão que alcançava as nuvens...</p>
+            <img src="img/pe_feijao.jpg" alt="Pé de Feijão">
+            <p>João decidiu subir pelo pé de feijão e, ao chegar ao topo, encontrou um castelo onde vivia um gigante. João explorou o castelo e encontrou muitos tesouros, incluindo uma galinha que botava ovos de ouro...</p>
+            <img src="img/castelo_gigante.jpg" alt="Castelo do Gigante">
+            <div class="choice">
+                <button class="btn btn-primary" onclick="makeChoice('a')">João pega a galinha dos ovos de ouro</button>
+                <button class="btn btn-primary" onclick="makeChoice('b')">João foge do gigante</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function makeChoice(choice) {
+            if (choice === 'a') {
+                document.querySelector('.story p:last-of-type').innerText = "João pegou a galinha dos ovos de ouro e desceu correndo pelo pé de feijão. Ele e sua mãe viveram felizes e prósperos para sempre!";
+            } else {
+                document.querySelector('.story p:last-of-type').innerText = "João fugiu do gigante e desceu correndo pelo pé de feijão. Mesmo sem a galinha dos ovos de ouro, ele e sua mãe viveram felizes e seguros.";
+            }
+            document.querySelector('.choice').style.display = 'none';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

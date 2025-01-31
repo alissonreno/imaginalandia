@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imaginalândia - Aladdin e a Lâmpada Maravilhosa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="canonical" href="https://www.imaginalandia.com/">
+    <meta property="og:title" content="Imaginalândia - Portal Infantil">
+    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
+    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .navbar {
+            background-color: #ffcc00;
+        }
+        .nav-link {
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            color: #ffcc00;
+        }
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .story {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .choice {
+            margin-top: 20px;
+        }
+        .story img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="index.html">Imaginalândia</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+				<li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
+				<li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+				<li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
+				<li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
+				<li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+				<li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
+				<li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+			</ul>
+		</div>
+	</nav>
+    <div class="container content">
+        <div class="story">
+            <h1>Aladdin e a Lâmpada Maravilhosa</h1>
+            <img src="../img/aladdin_lampada.jpg" alt="Aladdin e a Lâmpada Maravilhosa">
+            <p>Era uma vez um jovem chamado Aladdin, que vivia em uma cidade do Oriente. Um dia, ele foi abordado por um mago malvado que fingia ser seu tio e o levou a uma caverna cheia de tesouros. O mago disse a Aladdin para pegar uma lâmpada mágica, mas quando Aladdin o fez, o mago o trancou na caverna...</p>
+            <p>Preso na caverna, Aladdin esfregou a lâmpada e, para sua surpresa, um gênio apareceu. O gênio disse que estava lá para realizar três desejos de Aladdin. Com astúcia, Aladdin pediu para sair da caverna e voltar para casa com a lâmpada e os tesouros...</p>
+            <img src="../img/genio.jpg" alt="Gênio da Lâmpada">
+            <p>Com os desejos restantes, Aladdin se tornou rico e poderoso. Ele construiu um lindo palácio e chamou a atenção da princesa Jasmine. Eles se apaixonaram e se casaram. No entanto, o mago malvado estava determinado a recuperar a lâmpada...</p>
+            <img src="../img/palacio_aladdin.jpg" alt="Palácio de Aladdin">
+            <div class="choice">
+                <button class="btn btn-primary" onclick="makeChoice('a')">Aladdin enfrenta o mago</button>
+                <button class="btn btn-primary" onclick="makeChoice('b')">Aladdin esconde a lâmpada</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function makeChoice(choice) {
+            if (choice === 'a') {
+                document.querySelector('.story p:last-of-type').innerText = "Aladdin enfrentou o mago malvado e, com a ajuda do gênio, derrotou o mago para sempre. Ele e Jasmine viveram felizes para sempre.";
+            } else {
+                document.querySelector('.story p:last-of-type').innerText = "Aladdin escondeu a lâmpada em um lugar seguro e, com a ajuda de Jasmine, impediu o mago de encontrá-la. Eles viveram felizes para sempre.";
+            }
+            document.querySelector('.choice').style.display = 'none';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
