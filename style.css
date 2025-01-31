@@ -1,3 +1,4 @@
+/* Animação de fade-in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -11,6 +12,7 @@
     animation: fadeIn 2s ease-in-out;
 }
 
+/* Botão primário */
 .btn-primary {
     background-color: #ffcc00;
     border-color: #ffcc00;
@@ -22,6 +24,7 @@
     border-color: #ff9900;
 }
 
+/* Newsletter */
 .newsletter {
     text-align: center;
     margin-top: 50px;
@@ -30,6 +33,7 @@
     margin-bottom: 20px;
 }
 
+/* Modo Noturno */
 .night-mode {
     background-color: #333;
     color: #fff;
@@ -44,6 +48,7 @@
     color: #bbb;
 }
 
+/* Seção de Pontos */
 .points-section {
     margin-top: 30px;
     text-align: center;
