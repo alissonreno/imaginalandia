@@ -68,31 +68,35 @@
             </ul>
         </div>
     </nav>
+
     <div class="container content">
         <div class="story">
             <h1>Cinderela</h1>
             <img src="cinderela.jpg" alt="Cinderela">
-            <p>Era uma vez uma jovem chamada Cinderela, que vivia com sua madrasta e suas duas meias-irmãs. Elas a tratavam muito mal, obrigando-a a fazer todas as tarefas da casa e a vestir trapos...</p>
-            <p>Um dia, o rei decidiu dar um grande baile para encontrar uma noiva para o príncipe. Todas as jovens do reino foram convidadas, mas a madrasta de Cinderela proibiu-a de ir. Cinderela ficou muito triste...</p>
+            <p>Era uma vez uma jovem chamada Cinderela, que vivia com sua madrasta e suas duas meias-irmãs. Elas a tratavam muito mal, obrigando-a a fazer todas as tarefas da casa e a vestir trapos. Cinderela sonhava com uma vida melhor, longe da crueldade e das injustiças de sua casa.</p>
+            <p>Um dia, o rei decidiu dar um grande baile para encontrar uma noiva para o príncipe. Todas as jovens do reino foram convidadas, mas a madrasta de Cinderela, com inveja de sua beleza, proibiu-a de ir. Ela ficou triste e desesperançada, mas seu espírito bondoso e otimista a manteve firme.</p>
             <img src="cinderela_triste.jpg" alt="Cinderela Triste">
-            <p>No entanto, sua Fada Madrinha apareceu e, com sua varinha mágica, transformou os trapos de Cinderela em um lindo vestido, e abóboras em uma carruagem. Cinderela foi ao baile e encantou o príncipe, mas teve que sair correndo à meia-noite, deixando para trás um sapatinho de cristal...</p>
+            <p>Ao ver a tristeza de Cinderela, sua Fada Madrinha apareceu e, com sua varinha mágica, transformou os trapos de Cinderela em um lindo vestido, e abóboras em uma carruagem dourada. O relógio bateu e a Fada Madrinha avisou que, à meia-noite, tudo voltaria ao normal. Cinderela foi ao baile e encantou o príncipe, que dançou com ela a noite inteira.</p>
             <img src="baile_cinderela.jpg" alt="Baile de Cinderela">
+            <p>Porém, ao ouvir o relógio soar a meia-noite, Cinderela teve que fugir rapidamente, deixando para trás um sapatinho de cristal. O príncipe, determinado a encontrá-la, procurou em todas as casas do reino, até que chegou à casa de Cinderela.</p>
             <div class="choice">
                 <button class="btn btn-primary" onclick="makeChoice('a')">O príncipe encontra Cinderela</button>
                 <button class="btn btn-primary" onclick="makeChoice('b')">O príncipe não encontra Cinderela</button>
             </div>
         </div>
     </div>
+
     <script>
         function makeChoice(choice) {
             if (choice === 'a') {
-                document.querySelector('.story p:last-of-type').innerText = "O príncipe encontrou Cinderela, casaram-se e viveram felizes para sempre!";
+                document.querySelector('.story p:last-of-type').innerText = "O príncipe encontrou Cinderela, casaram-se e viveram felizes para sempre! Ela foi reconhecida por sua bondade e amor, e sua vida mudou para sempre.";
             } else {
-                document.querySelector('.story p:last-of-type').innerText = "O príncipe não conseguiu encontrar Cinderela, mas ela continuou sua vida cheia de magia e bondade.";
+                document.querySelector('.story p:last-of-type').innerText = "O príncipe não conseguiu encontrar Cinderela, mas ela continuou sua vida cheia de magia e bondade, conquistando o respeito e amor de todos ao seu redor. A verdadeira felicidade veio de dentro!";
             }
             document.querySelector('.choice').style.display = 'none';
         }
     </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

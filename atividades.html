@@ -4,56 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginalândia - Atividades</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="canonical" href="https://www.imaginalandia.com/">
-    <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
-    <meta property="og:url" content="https://www.imaginalandia.com/">
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Baixe atividades educativas para crianças, como desenhos para colorir, labirintos, palavras cruzadas e muito mais!">
+    <meta name="keywords" content="atividades infantis, imprimir, colorir, labirinto, quebra-cabeça, aprendizado">
+    <meta name="author" content="Imaginalândia">
+    <link rel="canonical" href="https://www.imaginalandia.com/atividades.html">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Imaginalândia - Atividades Educativas">
+    <meta property="og:description" content="Explore atividades educativas para imprimir e divertir-se enquanto aprende!">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/atividades-banner.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/atividades.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
-
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
-        }
-        .navbar {
-            background-color: #dc3545; /* Vermelho */
-        }
-        .nav-link {
-            color: #ffffff;
-        }
-        .nav-link:hover {
-            color: #dc3545;
-        }
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .activity-list {
-            list-style: none;
-            padding: 0;
-        }
-        .activity-list li {
-            margin: 10px 0;
-        }
-    </style>
+    <meta name="twitter:title" content="Imaginalândia - Atividades Educativas">
+    <meta name="twitter:description" content="Baixe e imprima atividades educativas para estimular o aprendizado das crianças!">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/atividades-banner.png">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
-                <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
+                <li class="nav-item"><a class="nav-link active" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
                 <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
@@ -61,18 +45,43 @@
             </ul>
         </div>
     </nav>
-    <div class="container content">
-        <h1>Atividades</h1>
-        <ul class="activity-list">
-            <li><a href="atividades/atividade1.pdf" target="_blank">Colorir: Animais da Floresta</a></li>
-            <li><a href="atividades/atividade2.pdf" target="_blank">Labirinto: Encontre o Caminho</a></li>
-            <li><a href="atividades/atividade3.pdf" target="_blank">Quebra-Cabeça: Monte a Figura</a></li>
-            <li><a href="atividades/atividade4.pdf" target="_blank">Ligação de Pontos: Crie o Desenho</a></li>
-            <li><a href="atividades/atividade5.pdf" target="_blank">Palavras Cruzadas: Tema Animais</a></li>
-        </ul>
+
+    <!-- Conteúdo Principal -->
+    <div class="container text-center mt-4">
+        <h1 class="mb-4 text-danger">Atividades Educativas</h1>
+        <p class="lead">Baixe, imprima e divirta-se com nossas atividades!</p>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="atividade1.pdf" target="_blank" class="btn btn-outline-danger btn-block">Colorir: Animais da Floresta</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="atividade2.pdf" target="_blank" class="btn btn-outline-danger btn-block">Labirinto: Encontre o Caminho</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="atividade3.pdf" target="_blank" class="btn btn-outline-danger btn-block">Quebra-Cabeça: Monte a Figura</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="atividade4.pdf" target="_blank" class="btn btn-outline-danger btn-block">Ligação de Pontos: Crie o Desenho</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="atividade5.pdf" target="_blank" class="btn btn-outline-danger btn-block">Palavras Cruzadas: Tema Animais</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Botão de Modo Noturno -->
+    <button id="modeToggle" class="btn btn-secondary">Modo Noturno</button>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('modeToggle').addEventListener('click', function () {
+            document.body.classList.toggle('night-mode');
+        });
+    </script>
+
 </body>
 </html>

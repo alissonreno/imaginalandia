@@ -7,47 +7,51 @@
     <meta name="keywords" content="histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis, pais, desenvolvimento infantil">
     <meta name="author" content="Imaginalândia">
     <link rel="canonical" href="https://www.imaginalandia.com/">
+    
+    <!-- Open Graph / Twitter -->
     <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta property="og:description" content="Histórias interativas, jogos educativos e mais para crianças.">
     <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
     <meta property="og:url" content="https://www.imaginalandia.com/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
 
     <title>Imaginalândia - Home</title>
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
         .navbar {
             background-color: #ffcc00;
         }
         .nav-link {
-            color: #ffffff;
+            color: #333 !important;
+            font-weight: 500;
         }
         .nav-link:hover {
-            color: #ffcc00;
+            color: #ff8800 !important;
         }
         .content {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
         .night-mode {
-            background-color: #333;
+            background-color: #222;
             color: #fff;
         }
         .night-mode .navbar {
-            background-color: #555;
+            background-color: #444;
         }
         .night-mode .nav-link {
-            color: #ddd;
+            color: #ddd !important;
         }
         .night-mode .nav-link:hover {
-            color: #bbb;
+            color: #ffcc00 !important;
         }
         .points-section {
             margin-top: 30px;
@@ -55,60 +59,71 @@
             background-color: #ffcc00;
             padding: 20px;
             border-radius: 10px;
-            color: #ffffff;
-        }
-        .points-section h2 {
-            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
         }
         .newsletter {
             text-align: center;
             margin-top: 30px;
         }
-
-        /* Animação de destaque */
-        .highlight {
-            animation: highlight 2s infinite;
+        .btn-primary {
+            background-color: #ff8800;
+            border: none;
         }
-
-        @keyframes highlight {
-            0% { background-color: #ffcc00; }
-            50% { background-color: #ffd633; }
-            100% { background-color: #ffcc00; }
+        .btn-primary:hover {
+            background-color: #ff6600;
+        }
+        #modeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #modeToggle:hover {
+            background: #666;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
-                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
                 <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Conteúdo -->
     <div class="container content">
-        <h1>Bem-vindo à Imaginalândia!</h1>
+        <h1 class="font-weight-bold">Bem-vindo à Imaginalândia!</h1>
         <p>Explore histórias interativas, jogos educativos e atividades divertidas!</p>
+        
         <div class="points-section">
             <h2>Seus Pontos</h2>
             <p id="points">0</p>
         </div>
     </div>
 
+    <!-- Newsletter -->
     <div class="newsletter">
         <h2>Assine nossa Newsletter</h2>
-        <form>
+        <form id="newsletterForm">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" required>
@@ -117,36 +132,30 @@
         </form>
     </div>
 
-    <button id="modeToggle" class="btn btn-secondary">Modo Noturno</button>
+    <!-- Modo Noturno -->
+    <button id="modeToggle" aria-label="Alternar modo noturno">Modo Noturno</button>
 
+    <!-- Scripts -->
     <script>
-        document.getElementById('modeToggle').onclick = function() {
+        document.getElementById('modeToggle').addEventListener('click', function() {
             document.body.classList.toggle('night-mode');
-        }
-        document.querySelector('.newsletter form').addEventListener('submit', function(event) {
+            this.textContent = document.body.classList.contains('night-mode') ? 'Modo Claro' : 'Modo Noturno';
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Inscrição na newsletter realizada com sucesso!');
-            // Aqui você pode adicionar a funcionalidade de envio de email ou integração com backend.
+            document.getElementById('email').value = ''; // Limpa campo após envio
         });
-    </script>
-    <script>
-        let points = 0;
 
+        let points = 0;
         function addPoints(value) {
             points += value;
             document.getElementById("points").innerText = points;
         }
-    
-        // Exemplo de adicionar pontos ao completar um jogo
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.letter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    addPoints(10);
-                });
-            });
-        });
     </script>
 
+    <!-- Bibliotecas externas -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

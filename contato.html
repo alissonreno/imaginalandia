@@ -4,93 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginalândia - Contato</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="canonical" href="https://www.imaginalandia.com/">
-    <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
-    <meta property="og:url" content="https://www.imaginalandia.com/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
 
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
-        }
-        .navbar {
-            background-color: #ffcc00;
-        }
-        .nav-link {
-            color: #ffffff;
-        }
-        .nav-link:hover {
-            color: #ffcc00;
-        }
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .form-section {
-            text-align: left;
-            margin-top: 30px;
-        }
-        .form-section h2 {
-            color: #ffcc00;
-        }
-    </style>
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Entre em contato com a Imaginalândia! Envie dúvidas, sugestões ou mensagens para nossa equipe.">
+    <meta name="keywords" content="contato, fale conosco, suporte, mensagens, Imaginalândia">
+    <meta name="author" content="Imaginalândia">
+    <link rel="canonical" href="https://www.imaginalandia.com/contato.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Imaginalândia - Contato">
+    <meta property="og:description" content="Envie uma mensagem para a equipe da Imaginalândia. Estamos aqui para ajudar!">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/contato-banner.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/contato.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Imaginalândia - Contato">
+    <meta name="twitter:description" content="Tire suas dúvidas ou envie sugestões para nossa equipe.">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/contato-banner.png">
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-		<a class="navbar-brand" href="index.html">Imaginalândia</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
-				<li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
-				<li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
-				<li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
-				<li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-				<li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
-				<li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-			</ul>
-		</div>
-	</nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
+                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
+                <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
+                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+            </ul>
+        </div>
     </nav>
-    <div class="container content">
-        <h1>Contato</h1>
-        <div class="form-section">
-            <h2>Envie uma Mensagem</h2>
-            <form>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" required>
+
+    <!-- Conteúdo Principal -->
+    <div class="container text-center mt-4">
+        <h1 class="mb-4 text-warning">Fale Conosco</h1>
+        <p class="lead">Tem dúvidas ou sugestões? Entre em contato com nossa equipe!</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card border-warning shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-warning">Envie sua Mensagem</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="seuemail@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea class="form-control" id="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-warning btn-block">Enviar</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
-                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
+            </div>
+        </div>
+
+        <!-- Informações de Contato -->
+        <div class="mt-4">
+            <h3 class="text-warning">Outras formas de contato</h3>
+            <p><strong>Email:</strong> contato@imaginalandia.com</p>
+            <p><strong>Telefone:</strong> (41) 99566-4016</p>
+            <p><strong>Redes Sociais:</strong></p>
+            <a href="#" class="btn btn-primary btn-sm">Facebook</a>
+            <a href="#" class="btn btn-info btn-sm">Twitter</a>
+            <a href="#" class="btn btn-danger btn-sm">Instagram</a>
         </div>
     </div>
-    <script>
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Sua mensagem foi enviada com sucesso!');
-        });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Botão de Modo Noturno -->
+    <button id="modeToggle" class="btn btn-secondary mt-4">Modo Noturno</button>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Modo Noturno
+        document.getElementById('modeToggle').addEventListener('click', function () {
+            document.body.classList.toggle('night-mode');
+        });
+
+        // Validação do Formulário
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sua mensagem foi enviada com sucesso!');
+            this.reset();
+        });
+    </script>
+
 </body>
 </html>

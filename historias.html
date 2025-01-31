@@ -4,54 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginalândia - Histórias Interativas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="canonical" href="https://www.imaginalandia.com/">
-    <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
-    <meta property="og:url" content="https://www.imaginalandia.com/">
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Leia histórias interativas infantis na Imaginalândia. Clássicos como A Bela Adormecida, Os Três Porquinhos e muito mais!">
+    <meta name="keywords" content="histórias infantis, contos de fadas, histórias interativas, leitura infantil">
+    <meta name="author" content="Imaginalândia">
+    <link rel="canonical" href="https://www.imaginalandia.com/historias.html">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Imaginalândia - Histórias Interativas">
+    <meta property="og:description" content="Leia histórias interativas e divirta-se com contos clássicos na Imaginalândia!">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/historias-banner.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/historias.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
+    <meta name="twitter:title" content="Imaginalândia - Histórias Interativas">
+    <meta name="twitter:description" content="Leia histórias interativas infantis e explore contos clássicos de forma divertida!">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/historias-banner.png">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
-        }
-        .navbar {
-            background-color: #007bff; /* Azul */
-        }
-        .nav-link {
-            color: #ffffff;
-        }
-        .nav-link:hover {
-            color: #007bff;
-        }
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .story-list {
-            list-style: none;
-            padding: 0;
-        }
-        .story-list li {
-            margin: 10px 0;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
+                <li class="nav-item"><a class="nav-link active" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
@@ -61,24 +46,61 @@
             </ul>
         </div>
     </nav>
-    <div class="container content">
-        <h1>Histórias Interativas</h1>
-        <ul class="story-list">
-            <li><a href="bela_adormecida.html">A Bela Adormecida</a></li>
-            <li><a href="tres_porquinhos.html">Os Três Porquinhos</a></li>
-            <li><a href="branca_de_neve.html">Branca de Neve</a></li>
-            <li><a href="chapeuzinho_vermelho.html">Chapeuzinho Vermelho</a></li>
-            <li><a href="cinderela.html">Cinderela</a></li>
-            <li><a href="o_patinho_feio.html">O Patinho Feio</a></li>
-            <li><a href="joao_pe_feijao.html">João e o Pé de Feijão</a></li>
-            <li><a href="magico_de_oz.html">O Mágico de Oz</a></li>
-            <li><a href="aladdin_lampada.html">Aladdin e a Lâmpada Maravilhosa</a></li>
-            <li><a href="rapunzel.html">Rapunzel</a></li>
-            <li><a href="peter_pan.html">Peter Pan</a></li>
-        </ul>
+
+    <!-- Conteúdo Principal -->
+    <div class="container text-center mt-4">
+        <h1 class="mb-4 text-primary">Histórias Interativas</h1>
+        <p class="lead">Escolha sua história favorita e embarque em uma aventura mágica!</p>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="bela_adormecida.html" class="btn btn-outline-primary btn-block">A Bela Adormecida</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="tres_porquinhos.html" class="btn btn-outline-primary btn-block">Os Três Porquinhos</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="branca_de_neve.html" class="btn btn-outline-primary btn-block">Branca de Neve</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="chapeuzinho_vermelho.html" class="btn btn-outline-primary btn-block">Chapeuzinho Vermelho</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="cinderela.html" class="btn btn-outline-primary btn-block">Cinderela</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="o_patinho_feio.html" class="btn btn-outline-primary btn-block">O Patinho Feio</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="joao_pe_feijao.html" class="btn btn-outline-primary btn-block">João e o Pé de Feijão</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="magico_de_oz.html" class="btn btn-outline-primary btn-block">O Mágico de Oz</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="aladdin_lampada.html" class="btn btn-outline-primary btn-block">Aladdin e a Lâmpada Maravilhosa</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="rapunzel.html" class="btn btn-outline-primary btn-block">Rapunzel</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="peter_pan.html" class="btn btn-outline-primary btn-block">Peter Pan</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Botão de Modo Noturno -->
+    <button id="modeToggle" class="btn btn-secondary">Modo Noturno</button>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('modeToggle').addEventListener('click', function () {
+            document.body.classList.toggle('night-mode');
+        });
+    </script>
+
 </body>
 </html>

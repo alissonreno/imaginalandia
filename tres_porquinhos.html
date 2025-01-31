@@ -17,27 +17,30 @@
 
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
         .navbar {
-            background-color: #007bff; /* Azul */
+            background-color: #ffcc00;
         }
         .nav-link {
-            color: #ffffff;
+            color: #333 !important;
+            font-weight: 500;
         }
         .nav-link:hover {
-            color: #007bff;
+            color: #ff8800 !important;
         }
         .content {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
         .story {
             background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
         }
         .choice {
             margin-top: 20px;
@@ -47,53 +50,111 @@
             height: auto;
             border-radius: 10px;
         }
+        .reset-btn {
+            margin-top: 20px;
+            background-color: #ff8800;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #ff8800;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff6600;
+        }
+        .night-mode .navbar {
+            background-color: #444;
+        }
+        .night-mode .nav-link {
+            color: #ddd !important;
+        }
+        .night-mode .nav-link:hover {
+            color: #ffcc00 !important;
+        }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
-                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
                 <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Conteúdo -->
     <div class="container content">
         <div class="story">
             <h1>Os Três Porquinhos</h1>
             <img src="tres_porquinhos.jpg" alt="Os Três Porquinhos">
-            <p>Era uma vez três porquinhos que decidiram construir suas próprias casas. O primeiro porquinho, preguiçoso, construiu uma casa de palha. O segundo porquinho, um pouco mais esforçado, construiu uma casa de madeira. O terceiro porquinho, muito trabalhador, construiu uma casa de tijolos...</p>
-            <p>Um dia, o lobo mau apareceu e foi até a casa de palha. Ele soprou e soprou, e a casa de palha foi ao chão. O primeiro porquinho correu para a casa do segundo porquinho...</p>
-            <img src="lobo_soprando.jpg" alt="Lobo Soprando a Casa de Palha">
-            <p>O lobo, então, foi até a casa de madeira. Ele soprou e soprou, e a casa de madeira caiu. Os dois porquinhos correram para a casa do terceiro porquinho...</p>
-            <p>O lobo, determinado a pegar os porquinhos, foi até a casa de tijolos. Ele soprou e soprou, mas a casa de tijolos não caiu...</p>
-            <img src="casa_tijolos.jpg" alt="Casa de Tijolos">
+            <p>Há muito tempo, em uma floresta distante, viviam três porquinhos. Cada um deles sonhava em construir sua própria casa, onde pudessem viver felizes e seguros. O primeiro porquinho era muito preguiçoso. Ele queria algo rápido e fácil, então decidiu construir uma casa de palha. O segundo porquinho, que era um pouco mais esperto, preferiu construir sua casa de madeira, pois achava que seria mais resistente. Mas o terceiro porquinho, que era muito trabalhador, decidiu construir uma casa de tijolos, sabendo que seria mais forte e segura.</p>
+
+            <h3>O Início da Aventura</h3>
+            <p>Um dia, um lobo mau apareceu na floresta. Ele estava muito faminto e procurava algo para comer. Ao passar pela casa de palha do primeiro porquinho, ele percebeu a oportunidade perfeita. O lobo bateu à porta e disse:</p>
+            <p>"Porquinho, porquinho, me deixe entrar!"</p>
+            <p>Mas o porquinho, assustado, respondeu:</p>
+            <p>"Não, não, não! Não vou deixar você entrar!"</p>
+            <p>Então, o lobo soprou com toda sua força e a casa de palha caiu em pedaços! O primeiro porquinho correu desesperado para a casa do segundo porquinho.</p>
+
+            <h3>O Segundo Ataque</h3>
+            <p>O lobo, não satisfeito, foi atrás dos dois porquinhos. Chegando à casa de madeira do segundo porquinho, ele bateu na porta e disse:</p>
+            <p>"Porquinhos, porquinhos, me deixem entrar!"</p>
+            <p>Os porquinhos responderam com coragem:</p>
+            <p>"Não, não, não! Não vamos deixar você entrar!"</p>
+            <p>O lobo, furioso, soprou e soprou com toda a sua força, e a casa de madeira também caiu! Os dois porquinhos correram em direção à casa de tijolos do terceiro porquinho.</p>
+
+            <h3>O Confronto na Casa de Tijolos</h3>
+            <p>Os três porquinhos estavam finalmente juntos na casa de tijolos. O lobo, agora mais irritado do que nunca, foi até a casa de tijolos e bateu na porta, dizendo:</p>
+            <p>"Porquinhos, porquinhos, me deixem entrar!"</p>
+            <p>Mas os três porquinhos, com firmeza, responderam:</p>
+            <p>"Não, não, não! Não vamos deixar você entrar!"</p>
+            <p>O lobo, então, soprou com toda a sua força, mas a casa de tijolos não se mexeu. Ele tentou novamente, mas nada aconteceu. O lobo não conseguiu derrubar a casa de tijolos. Então, ele decidiu tentar outra estratégia.</p>
+
+            <h3>A Última Tentativa</h3>
+            <p>O lobo, determinado a pegar os porquinhos, pensou em uma forma de entrar pela chaminé. Ele subiu no telhado e começou a descer pela chaminé. Mas os porquinhos estavam prontos! Eles rapidamente acenderam uma grande fogueira na lareira e esperaram o lobo cair na armadilha.</p>
+            <p>O lobo, ao descer pela chaminé, caiu diretamente na fogueira! Assustado e queimado, ele subiu rapidamente pela chaminé e fugiu para sempre!</p>
+
+            <h3>O Final Feliz</h3>
+            <p>Com o lobo finalmente fora de suas vidas, os três porquinhos viveram felizes para sempre, seguros em sua casa de tijolos. O primeiro porquinho aprendeu a importância de trabalhar com dedicação, e o segundo porquinho também reconheceu que construir algo forte e duradouro é sempre melhor. Juntos, eles fizeram uma festa na casa de tijolos e viveram muitos e muitos dias felizes.</p>
+
             <div class="choice">
-                <button class="btn btn-primary" onclick="makeChoice('a')">O lobo desiste</button>
-                <button class="btn btn-primary" onclick="makeChoice('b')">O lobo tenta outra estratégia</button>
+                <button class="btn btn-primary" onclick="makeChoice('a')">O lobo desiste depois de tentar várias vezes</button>
+                <button class="btn btn-primary" onclick="makeChoice('b')">O lobo tenta entrar pela chaminé e falha</button>
             </div>
         </div>
+        
+        <button id="resetGame" class="btn btn-primary reset-btn">Reiniciar História</button>
     </div>
+
     <script>
         function makeChoice(choice) {
+            const outcomeText = document.querySelector('.story p:last-of-type');
             if (choice === 'a') {
-                document.querySelector('.story p:last-of-type').innerText = "O lobo, cansado de tanto soprar, desistiu e foi embora. Os três porquinhos viveram felizes e seguros na casa de tijolos!";
+                outcomeText.innerText = "O lobo, cansado de tanto soprar, desistiu e foi embora. Os três porquinhos viveram felizes e seguros na casa de tijolos!";
             } else {
-                document.querySelector('.story p:last-of-type').innerText = "O lobo decidiu tentar entrar pela chaminé, mas os porquinhos acenderam uma fogueira e o lobo fugiu apavorado. Os três porquinhos viveram felizes e seguros na casa de tijolos!";
+                outcomeText.innerText = "O lobo decidiu tentar entrar pela chaminé. Mas os porquinhos, muito espertos, acenderam uma grande fogueira. O lobo, assustado, fugiu e nunca mais apareceu. Os três porquinhos viveram felizes e seguros na casa de tijolos!";
             }
             document.querySelector('.choice').style.display = 'none';
         }
+
+        // Reiniciar a história
+        document.getElementById('resetGame').addEventListener('click', () => {
+            document.querySelector('.choice').style.display = 'block';
+            document.querySelector('.story p:last-of-type').innerText = "Com o lobo finalmente fora de suas vidas, os três porquinhos viveram felizes para sempre, seguros em sua casa de tijolos. O que eles farão a seguir?";
+        });
     </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

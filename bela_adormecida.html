@@ -3,94 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imaginalândia - A Bela Adormecida</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta name="keywords" content="histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis, pais, desenvolvimento infantil">
+    <meta name="author" content="Imaginalândia">
     <link rel="canonical" href="https://www.imaginalandia.com/">
-    <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Imaginalândia - A Bela Adormecida">
+    <meta property="og:description" content="Explore a história interativa da Bela Adormecida, onde você pode escolher os caminhos e determinar o destino da princesa Aurora.">
     <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
     <meta property="og:url" content="https://www.imaginalandia.com/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
 
+    <title>Imaginalândia - A Bela Adormecida</title>
+
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
         .navbar {
-            background-color: #007bff; /* Azul */
+            background-color: #ffcc00;
         }
         .nav-link {
-            color: #ffffff;
+            color: #333 !important;
+            font-weight: 500;
         }
         .nav-link:hover {
-            color: #007bff;
+            color: #ff8800 !important;
         }
         .content {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
-        .story {
-            background: #ffffff;
+        .night-mode {
+            background-color: #222;
+            color: #fff;
+        }
+        .night-mode .navbar {
+            background-color: #444;
+        }
+        .night-mode .nav-link {
+            color: #ddd !important;
+        }
+        .night-mode .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+        .story-section {
+            margin-top: 40px;
+            text-align: left;
+            background-color: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .choice {
+        .points-section {
+            margin-top: 30px;
+            text-align: center;
+            background-color: #ffcc00;
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+        .choice-btn {
             margin-top: 20px;
         }
-        .story img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .newsletter {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn-primary {
+            background-color: #ff8800;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff6600;
+        }
+        #modeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #modeToggle:hover {
+            background: #666;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
-                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                <li class="nav-item"><a class="nav-link active" href="bela_adormecida.html">A Bela Adormecida</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Conteúdo -->
     <div class="container content">
-        <div class="story">
-            <h1>A Bela Adormecida</h1>
-            <img src="bela_adormecida.jpg" alt="A Bela Adormecida">
-            <p>Era uma vez, em um reino distante, uma linda princesa chamada Aurora. Ao nascer, uma bruxa malvada lançou uma maldição sobre ela, dizendo que ela iria espetar seu dedo em um fuso e cair em um sono profundo que duraria cem anos...</p>
-            <p>Um dia, enquanto explorava o castelo, Aurora encontrou uma sala misteriosa com um fuso. Sem saber do perigo, ela tocou o fuso e imediatamente caiu em um sono profundo...</p>
-            <p>O tempo passou, e um príncipe corajoso ouviu falar sobre a princesa adormecida. Decidido a salvá-la, ele atravessou muitas terras e enfrentou vários desafios até chegar ao castelo. Lá, ele encontrou Aurora dormindo pacificamente e decidiu beijá-la...</p>
-            <div class="choice">
-                <button class="btn btn-primary" onclick="makeChoice('a')">O príncipe beija Aurora</button>
-                <button class="btn btn-primary" onclick="makeChoice('b')">O príncipe decide não beijar Aurora</button>
+        <h1 class="font-weight-bold">A Bela Adormecida</h1>
+		<p>Uma história interativa para você explorar e decidir o destino da princesa Aurora.</p>
+        <img src="bela_adormecida.jpg" alt="A Bela Adormecida">
+		
+        <div class="story-section">
+            <h3>Era uma vez, em um reino distante...</h3>
+            <p>Em um reino encantado, havia uma linda princesa chamada Aurora. Quando nasceu, o rei e a rainha organizaram uma grande festa para celebrar sua chegada ao mundo. Todos os moradores do reino foram convidados, e até as fadas boas compareceram para abençoar a princesa.</p>
+
+            <p>No entanto, uma fada malvada, chamada Malévola, não foi convidada. Ofendida, ela apareceu na festa e lançou uma terrível maldição sobre a princesa: "No dia de seu 16º aniversário, Aurora irá espetar seu dedo em um fuso e cairá em um sono profundo, do qual nunca acordará, a menos que um príncipe a beije."</p>
+
+            <p>As boas fadas, tentando reverter a maldição, alteraram o feitiço. Elas não podiam impedir que Aurora caísse no sono, mas prometeram que ela acordaria, não por um beijo qualquer, mas por um verdadeiro ato de amor.</p>
+
+            <p>A princesa Aurora cresceu cercada de amor e carinho, mas sem saber da maldição que pairava sobre ela. Quando completou 16 anos, ela estava ansiosa para explorar o castelo e seus arredores. Durante suas aventuras, ela encontrou uma sala secreta onde um fuso estava guardado, sem saber do perigo que ele representava...</p>
+
+            <p>Ao tocar o fuso, Aurora imediatamente caiu em um sono profundo, como a maldição havia previsto. O castelo foi envolto por um manto de silêncio, e todos os habitantes do reino também caíram em um sono mágico. O rei e a rainha estavam desolados, mas as boas fadas mantiveram a esperança viva de que a princesa um dia seria despertada por um ato de amor verdadeiro.</p>
+
+            <div class="choice-btn">
+                <button class="btn btn-success" onclick="makeChoice('a')">O príncipe decide beijar Aurora</button>
+                <button class="btn btn-warning" onclick="makeChoice('b')">O príncipe decide procurar outra maneira</button>
             </div>
+
+            <p id="storyOutcome" class="message d-none"></p>
         </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+            <h2>Assine nossa Newsletter</h2>
+            <form id="newsletterForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Assinar</button>
+            </form>
+        </div>
+
+        <!-- Modo Noturno -->
+        <button id="modeToggle" aria-label="Alternar modo noturno">Modo Noturno</button>
     </div>
+
+    <!-- Scripts -->
     <script>
         function makeChoice(choice) {
+            const outcomeText = document.getElementById('storyOutcome');
             if (choice === 'a') {
-                document.querySelector('.story p:last-of-type').innerText = "O príncipe beijou Aurora, quebrando a maldição e acordando-a do sono profundo. Eles viveram felizes para sempre!";
+                outcomeText.textContent = "O príncipe beijou Aurora, quebrando a maldição. Ela acordou e, juntos, viveram felizes para sempre, governando o reino com sabedoria e bondade.";
             } else {
-                document.querySelector('.story p:last-of-type').innerText = "O príncipe decidiu não beijar Aurora, deixando-a adormecida e continuando sua jornada.";
+                outcomeText.textContent = "O príncipe, ao tentar procurar outra forma de quebrar o feitiço, se perde na floresta e acaba nunca encontrando o castelo novamente. Aurora permanece adormecida.";
             }
-            document.querySelector('.choice').style.display = 'none';
+            outcomeText.classList.remove('d-none');
+            document.querySelector('.choice-btn').style.display = 'none';
         }
+
+        document.getElementById('modeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('night-mode');
+            this.textContent = document.body.classList.contains('night-mode') ? 'Modo Claro' : 'Modo Noturno';
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Inscrição na newsletter realizada com sucesso!');
+            document.getElementById('email').value = ''; // Limpa campo após envio
+        });
     </script>
+
+    <!-- Bibliotecas externas -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

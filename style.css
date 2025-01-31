@@ -1,62 +1,133 @@
-/* Animação de fade-in */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.fade-in {
-    animation: fadeIn 2s ease-in-out;
+/* Estilos gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Botão primário */
-.btn-primary {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
     background-color: #ffcc00;
-    border-color: #ffcc00;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding: 15px;
 }
 
-.btn-primary:hover {
-    background-color: #ff9900;
-    border-color: #ff9900;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-/* Newsletter */
-.newsletter {
-    text-align: center;
-    margin-top: 50px;
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
-.newsletter h2 {
-    margin-bottom: 20px;
+
+.nav-link:hover {
+    color: #ff8800 !important;
 }
 
 /* Modo Noturno */
 .night-mode {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
 }
+
 .night-mode .navbar {
-    background-color: #555;
-}
-.night-mode .nav-link {
-    color: #ddd;
-}
-.night-mode .nav-link:hover {
-    color: #bbb;
+    background-color: #444;
 }
 
-/* Seção de Pontos */
+.night-mode .nav-link {
+    color: #ddd !important;
+}
+
+.night-mode .nav-link:hover {
+    color: #ffcc00 !important;
+}
+
+/* Conteúdo */
+.content {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Seção de pontos */
 .points-section {
     margin-top: 30px;
     text-align: center;
     background-color: #ffcc00;
     padding: 20px;
     border-radius: 10px;
-    color: #ffffff;
+    color: #333;
+    font-weight: 600;
 }
-.points-section h2 {
-    margin-bottom: 10px;
+
+/* Newsletter */
+.newsletter {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.newsletter form {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #ff8800;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff6600;
+}
+
+#modeToggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#modeToggle:hover {
+    background: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .content {
+        margin-top: 20px;
+    }
 }

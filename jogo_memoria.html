@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginalândia - Jogo da Memória</title>
+
+    <!-- CSS Externo -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             background-color: #f2f2f2;
         }
         .navbar {
-            background-color: #28a745; /* Verde */
+            background-color: #28a745;
         }
         .nav-link {
             color: #ffffff;
@@ -24,46 +28,59 @@
             margin-top: 50px;
         }
         .game {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(5, 120px);
+            grid-gap: 15px;
             justify-content: center;
+            margin-top: 20px;
         }
         .card {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
+            width: 120px;
+            height: 120px;
+            background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
         }
-        .card.flipped {
-            background-color: #ffcc00;
+        .card.flip {
+            transform: rotateY(180deg);
         }
-        .card[data-pair="1"].flipped { background-color: #ff7f7f; }
-        .card[data-pair="2"].flipped { background-color: #ffbf7f; }
-        .card[data-pair="3"].flipped { background-color: #ffff7f; }
-        .card[data-pair="4"].flipped { background-color: #7fff7f; }
-        .card[data-pair="5"].flipped { background-color: #7fffff; }
-        .card[data-pair="6"].flipped { background-color: #7f7fff; }
-        .card[data-pair="7"].flipped { background-color: #bf7fff; }
-        .card[data-pair="8"].flipped { background-color: #ff7fbf; }
-        .card[data-pair="9"].flipped { background-color: #ff7fff; }
-        .card[data-pair="10"].flipped { background-color: #ff7f7f; }
+        .card .front, .card .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+        .card .front {
+            background: #ddd url('https://via.placeholder.com/120') center/cover;
+            transform: rotateY(180deg);
+        }
+        .card .back {
+            background: #ffcc00;
+        }
+        .message {
+            font-size: 1.5rem;
+            color: #28a745;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .reset-btn {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
@@ -71,78 +88,131 @@
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
                 <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                <li class="nav-item"><a class="nav-link active" href="jogo_memoria.html">Jogo da Memória</a></li>
             </ul>
         </div>
     </nav>
-    <div class="container content">
-        <h1>Jogo da Memória</h1>
-        <div class="game">
-            <div class="card" data-pair="1"></div>
-            <div class="card" data-pair="2"></div>
-            <div class="card" data-pair="3"></div>
-            <div class="card" data-pair="4"></div>
-            <div class="card" data-pair="5"></div>
-            <div class="card" data-pair="6"></div>
-            <div class="card" data-pair="7"></div>
-            <div class="card" data-pair="8"></div>
-            <div class="card" data-pair="9"></div>
-            <div class="card" data-pair="10"></div>
-            <div class="card" data-pair="1"></div>
-            <div class="card" data-pair="2"></div>
-            <div class="card" data-pair="3"></div>
-            <div class="card" data-pair="4"></div>
-            <div class="card" data-pair="5"></div>
-            <div class="card" data-pair="6"></div>
-            <div class="card" data-pair="7"></div>
-            <div class="card" data-pair="8"></div>
-            <div class="card" data-pair="9"></div>
-            <div class="card" data-pair="10"></div>
-        </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container text-center">
+        <h1 class="text-success mt-4">Jogo da Memória</h1>
+        <p class="lead">Encontre os pares e treine sua memória!</p>
+        <p><strong>Movimentos:</strong> <span id="moves">0</span></p>
+
+        <div class="game" id="game-board"></div>
+
+        <p id="message" class="message d-none">Parabéns! Você completou o jogo!</p>
+        <button id="resetGame" class="btn btn-success reset-btn">Reiniciar Jogo</button>
     </div>
+
+    <!-- Scripts -->
     <script>
-        const cards = document.querySelectorAll('.card');
+        const gameBoard = document.getElementById('game-board');
+        const movesDisplay = document.getElementById('moves');
+        const message = document.getElementById('message');
+        const resetButton = document.getElementById('resetGame');
+
+        const images = [
+            '🐶', '🐱', '🐭', '🐹', '🐰',
+            '🦊', '🐻', '🐼', '🐨', '🐯'
+        ];
+        
+        let cardArray = [...images, ...images];
         let hasFlippedCard = false;
         let firstCard, secondCard;
+        let moves = 0;
 
+        // Função para embaralhar o array
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        // Função para criar o tabuleiro
+        function createBoard() {
+            gameBoard.innerHTML = '';
+            cardArray = shuffle(cardArray);
+            moves = 0;
+            movesDisplay.textContent = moves;
+            message.classList.add('d-none');
+
+            cardArray.forEach(symbol => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.symbol = symbol;
+
+                const frontFace = document.createElement('div');
+                frontFace.classList.add('front');
+                frontFace.textContent = symbol;
+
+                const backFace = document.createElement('div');
+                backFace.classList.add('back');
+
+                card.appendChild(frontFace);
+                card.appendChild(backFace);
+                gameBoard.appendChild(card);
+
+                card.addEventListener('click', flipCard);
+            });
+        }
+
+        // Função para virar as cartas
         function flipCard() {
-            this.classList.add('flipped');
+            if (this.classList.contains('flip') || this === firstCard) return;
+
+            this.classList.add('flip');
+
             if (!hasFlippedCard) {
                 hasFlippedCard = true;
                 firstCard = this;
-                return;
+            } else {
+                secondCard = this;
+                moves++;
+                movesDisplay.textContent = moves;
+                checkForMatch();
             }
-            secondCard = this;
-            checkForMatch();
         }
 
+        // Verifica se as cartas combinam
         function checkForMatch() {
-            let isMatch = firstCard.dataset.pair === secondCard.dataset.pair;
+            let isMatch = firstCard.dataset.symbol === secondCard.dataset.symbol;
             isMatch ? disableCards() : unflipCards();
         }
 
+        // Desabilita cartas corretas
         function disableCards() {
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
             resetBoard();
+            checkWin();
         }
 
+        // Desvira cartas erradas
         function unflipCards() {
             setTimeout(() => {
-                firstCard.classList.remove('flipped');
-                secondCard.classList.remove('flipped');
+                firstCard.classList.remove('flip');
+                secondCard.classList.remove('flip');
                 resetBoard();
-            }, 1500);
+            }, 1000);
         }
 
+        // Reseta o tabuleiro
         function resetBoard() {
             [hasFlippedCard, firstCard, secondCard] = [false, null, null];
         }
 
-        cards.forEach(card => card.addEventListener('click', flipCard));
+        // Verifica se o jogo foi concluído
+        function checkWin() {
+            if (document.querySelectorAll('.card.flip').length === cardArray.length) {
+                message.classList.remove('d-none');
+            }
+        }
+
+        // Reinicia o jogo
+        resetButton.addEventListener('click', createBoard);
+
+        // Inicializa o tabuleiro
+        createBoard();
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

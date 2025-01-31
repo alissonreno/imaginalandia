@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginalândia - Jogo da Forca</title>
+
+    <!-- CSS Externo -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             background-color: #f2f2f2;
         }
         .navbar {
-            background-color: #28a745; /* Verde */
+            background-color: #28a745;
         }
         .nav-link {
             color: #ffffff;
@@ -23,24 +27,10 @@
             text-align: center;
             margin-top: 50px;
         }
-        .game-list {
-            list-style: none;
-            padding: 0;
-        }
-        .game-list li {
-            margin: 10px 0;
-        }
         .word {
-            font-size: 24px;
+            font-size: 30px;
             letter-spacing: 2px;
-        }
-        .letter {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            border-bottom: 2px solid #333;
-            margin: 5px;
+            margin-bottom: 20px;
         }
         .letters {
             margin-top: 20px;
@@ -53,17 +43,36 @@
             border: 1px solid #333;
             margin: 5px;
             cursor: pointer;
+            font-size: 18px;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+        .letter-btn:hover {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .letter-btn:active {
+            background-color: #218838;
+        }
+        #message {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .reset-btn {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
@@ -71,44 +80,69 @@
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
                 <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                <li class="nav-item"><a class="nav-link active" href="jogo_forca.html">Jogo da Forca</a></li>
             </ul>
         </div>
     </nav>
-    <div class="container content">
-        <h1>Jogo da Forca</h1>
-        <div class="game">
-            <div class="word" id="word"></div>
-            <div class="letters" id="letters">
-                <!-- Letras serão geradas aqui -->
-            </div>
-            <p id="message"></p>
+
+    <!-- Conteúdo Principal -->
+    <div class="container text-center">
+        <h1 class="text-success mt-4">Jogo da Forca</h1>
+        <p class="lead">Adivinhe a palavra antes que o jogo acabe!</p>
+        <div class="word" id="word"></div>
+
+        <div class="letters" id="letters">
+            <!-- Letras serão geradas aqui -->
         </div>
+
+        <p id="message" class="message d-none"></p>
+        <button id="resetGame" class="btn btn-success reset-btn">Reiniciar Jogo</button>
     </div>
+
+    <!-- Scripts -->
     <script>
-        const words = ["ANIMAIS", "FRUTAS", "BRINQUEDOS"];
-        let chosenWord = words[Math.floor(Math.random() * words.length)];
-        let displayedWord = chosenWord.split("").map(letter => "_").join(" ");
-        document.getElementById("word").innerText = displayedWord;
+        const words = [
+            "ANIMAIS", "FRUTAS", "BRINQUEDOS", "CARRO", "CACHORRO", "GATO", "MELANCIA", 
+            "TELEFONE", "FUTEBOL", "COMPUTADOR", "JARDIM", "MESA", "CADEIRA", "ESCOLA", 
+            "CIDADE", "PAIS", "MUNDO", "JOGO", "AMIZADE", "FAMÍLIA", "VIDA", "SONHO", 
+            "LUZ", "FESTA", "ROSA", "MAÇÃ", "JARDINEIRO"
+        ];
 
-        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-        const lettersContainer = document.getElementById("letters");
+        const gameBoard = document.getElementById('word');
+        const lettersContainer = document.getElementById('letters');
+        const message = document.getElementById('message');
+        const resetButton = document.getElementById('resetGame');
+        let chosenWord, displayedWord, attempts;
 
-        alphabet.forEach(letter => {
-            const letterBtn = document.createElement("div");
-            letterBtn.classList.add("letter-btn");
-            letterBtn.innerText = letter;
-            letterBtn.addEventListener("click", () => checkLetter(letter));
-            lettersContainer.appendChild(letterBtn);
-        });
+        // Função para embaralhar e escolher uma palavra
+        function startGame() {
+            chosenWord = words[Math.floor(Math.random() * words.length)];
+            displayedWord = chosenWord.split("").map(letter => "_").join(" ");
+            attempts = 0;
+            gameBoard.textContent = displayedWord;
+            message.classList.add('d-none');
+            lettersContainer.innerHTML = '';
+            createLetterButtons();
+        }
 
-        let attempts = 0;
+        // Função para criar os botões das letras
+        function createLetterButtons() {
+            const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+            alphabet.forEach(letter => {
+                const letterBtn = document.createElement('div');
+                letterBtn.classList.add('letter-btn');
+                letterBtn.innerText = letter;
+                letterBtn.addEventListener('click', () => checkLetter(letter));
+                lettersContainer.appendChild(letterBtn);
+            });
+        }
 
+        // Função para verificar a letra escolhida
         function checkLetter(letter) {
-            const letterBtns = document.querySelectorAll(".letter-btn");
+            const letterBtns = document.querySelectorAll('.letter-btn');
             letterBtns.forEach(btn => {
                 if (btn.innerText === letter) {
-                    btn.style.display = "none";
+                    btn.style.display = 'none';
                 }
             });
 
@@ -122,21 +156,27 @@
                     }
                 }
                 displayedWord = updatedWord;
-                document.getElementById("word").innerText = displayedWord.trim();
+                gameBoard.textContent = displayedWord.trim();
 
                 if (!displayedWord.includes("_")) {
-                    document.getElementById("message").innerText = "Parabéns! Você acertou a palavra!";
+                    message.textContent = "Parabéns! Você acertou a palavra!";
+                    message.classList.remove('d-none');
                 }
             } else {
                 attempts++;
                 if (attempts === 6) {
-                    document.getElementById("message").innerText = "Game Over! A palavra era: " + chosenWord;
+                    message.textContent = "Game Over! A palavra era: " + chosenWord;
+                    message.classList.remove('d-none');
                 }
             }
         }
+
+        // Reiniciar o jogo
+        resetButton.addEventListener('click', startGame);
+
+        // Iniciar o jogo
+        startGame();
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

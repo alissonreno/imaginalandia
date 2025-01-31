@@ -3,46 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imaginalândia - Branca de Neve</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta name="keywords" content="histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis, pais, desenvolvimento infantil">
+    <meta name="author" content="Imaginalândia">
     <link rel="canonical" href="https://www.imaginalandia.com/">
+    
+    <!-- Open Graph / Twitter -->
     <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
+    <meta property="og:description" content="Histórias interativas, jogos educativos e mais para crianças.">
     <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
     <meta property="og:url" content="https://www.imaginalandia.com/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
 
+    <title>Imaginalândia - Branca de Neve</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
         .navbar {
-            background-color: #007bff; /* Azul */
+            background-color: #ffcc00;
         }
         .nav-link {
-            color: #ffffff;
+            color: #333 !important;
+            font-weight: 500;
         }
         .nav-link:hover {
-            color: #007bff;
+            color: #ff8800 !important;
         }
         .content {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
-        .story {
-            background: #ffffff;
+        .night-mode {
+            background-color: #222;
+            color: #fff;
+        }
+        .night-mode .navbar {
+            background-color: #444;
+        }
+        .night-mode .nav-link {
+            color: #ddd !important;
+        }
+        .night-mode .nav-link:hover {
+            color: #ffcc00 !important;
+        }
+        .points-section {
+            margin-top: 30px;
+            text-align: center;
+            background-color: #ffcc00;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            color: #333;
+            font-weight: 600;
         }
-        .choice {
-            margin-top: 20px;
+        .newsletter {
+            text-align: center;
+            margin-top: 30px;
         }
-        .story img {
+        .btn-primary {
+            background-color: #ff8800;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #ff6600;
+        }
+        #modeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #modeToggle:hover {
+            background: #666;
+        }
+        .story-image {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
@@ -50,49 +95,62 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
                 <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
-                <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Vídeos</a></li>
                 <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Conteúdo -->
     <div class="container content">
-        <div class="story">
-            <h1>Branca de Neve</h1>
-            <img src="branca_de_neve.jpg" alt="Branca de Neve">
-            <p>Era uma vez uma linda princesa chamada Branca de Neve, com pele tão branca como a neve, lábios vermelhos como o sangue e cabelos negros como o ébano. Sua madrasta, a rainha má, morria de inveja de sua beleza...</p>
-            <p>Todos os dias, a rainha perguntava ao seu espelho mágico: "Espelho, espelho meu, existe alguém mais bela do que eu?". E o espelho sempre respondia: "Branca de Neve é a mais bela de todas"...</p>
-            <img src="espelho_magico.jpg" alt="Espelho Mágico">
-            <p>Com ciúmes, a rainha ordenou que um caçador levasse Branca de Neve para a floresta e a matasse. Mas o caçador teve pena dela e a deixou escapar. Branca de Neve encontrou uma pequena casa onde sete anões viviam...</p>
-            <img src="sete_anoes.jpg" alt="Os Sete Anões">
-            <div class="choice">
-                <button class="btn btn-primary" onclick="makeChoice('a')">Branca de Neve se esconde com os anões</button>
-                <button class="btn btn-primary" onclick="makeChoice('b')">Branca de Neve enfrenta a rainha</button>
-            </div>
+        <h1 class="font-weight-bold">A História de Branca de Neve</h1>
+        <img src="branca_de_neve.jpg" alt="Branca de Neve" class="story-image">
+        <p>Era uma vez, em um reino distante, uma princesa chamada Branca de Neve, com pele tão branca quanto a neve, lábios vermelhos como o sangue e cabelos negros como o ébano. Todos no reino amavam a princesa por sua bondade, mas sua madrasta, a rainha má, tinha um ciúmes do seu encanto.</p>
+
+        <h3>O Espelho Mágico</h3>
+        <p>A cada dia, a rainha perguntava ao espelho mágico: "Espelho, espelho meu, existe alguém mais bela do que eu?". E sempre a resposta era: "Branca de Neve é a mais bela de todas". O ciúmes consumia a rainha e ela decidiu acabar com a princesa.</p>
+        <img src="espelho_magico.jpg" alt="Espelho Mágico" class="story-image">
+        
+        <h3>A Fuga na Floresta</h3>
+        <p>Com raiva, a rainha mandou que a princesa fosse levada à floresta para ser morta. No entanto, o caçador teve pena de Branca de Neve e a deixou escapar. Ela encontrou uma casa onde sete anões moravam e passou a viver com eles.</p>
+        <img src="sete_anoes.jpg" alt="Os Sete Anões" class="story-image">
+        
+        <div class="points-section">
+            <h2>O Encontro com a Maçã Envenenada</h2>
+            <p>Com o passar dos dias, a rainha, disfarçada de velha, ofereceu a Branca de Neve uma maçã envenenada. Ao morder a fruta, Branca de Neve caiu em um sono profundo.</p>
+            <img src="maca_envenenada.jpg" alt="Maçã Envenenada" class="story-image">
         </div>
+
+        <h3>O Final Feliz</h3>
+        <p>Após o beijo de um príncipe, Branca de Neve acordou do feitiço e, com a ajuda dele, derrotou a rainha má. O reino foi libertado, e ela e o príncipe viveram felizes para sempre.</p>
+        <img src="final_feliz.jpg" alt="Final Feliz" class="story-image">
     </div>
+
+    <!-- Modo Noturno -->
+    <button id="modeToggle" aria-label="Alternar modo noturno">Modo Noturno</button>
+
+    <!-- Scripts -->
     <script>
-        function makeChoice(choice) {
-            if (choice === 'a') {
-                document.querySelector('.story p:last-of-type').innerText = "Branca de Neve decidiu se esconder com os anões, vivendo feliz e segura sob sua proteção.";
-            } else {
-                document.querySelector('.story p:last-of-type').innerText = "Branca de Neve decidiu enfrentar a rainha má, e com a ajuda dos anões, derrotou a rainha e viveu feliz para sempre.";
-            }
-            document.querySelector('.choice').style.display = 'none';
-        }
+        document.getElementById('modeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('night-mode');
+            this.textContent = document.body.classList.contains('night-mode') ? 'Modo Claro' : 'Modo Noturno';
+        });
     </script>
+
+    <!-- Bibliotecas externas -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

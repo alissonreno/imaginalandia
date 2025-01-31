@@ -4,55 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imaginalândia - Jogos Educativos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="canonical" href="https://www.imaginalandia.com/">
-    <meta property="og:title" content="Imaginalândia - Portal Infantil">
-    <meta property="og:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta property="og:image" content="https://www.imaginalandia.com/images/logo.png">
-    <meta property="og:url" content="https://www.imaginalandia.com/">
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Explore jogos educativos divertidos na Imaginalândia! Atividades interativas para estimular o aprendizado das crianças.">
+    <meta name="keywords" content="jogos infantis, jogos educativos, aprendizado interativo, quebra-cabeça, memória">
+    <meta name="author" content="Imaginalândia">
+    <link rel="canonical" href="https://www.imaginalandia.com/jogos.html">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Imaginalândia - Jogos Educativos">
+    <meta property="og:description" content="Divirta-se com jogos educativos interativos na Imaginalândia!">
+    <meta property="og:image" content="https://www.imaginalandia.com/images/jogos-banner.png">
+    <meta property="og:url" content="https://www.imaginalandia.com/jogos.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Imaginalândia - Portal Infantil">
-    <meta name="twitter:description" content="Imaginalândia é um portal infantil com histórias interativas, jogos educativos, atividades para imprimir, vídeos infantis e uma área para pais.">
-    <meta name="twitter:image" content="https://www.imaginalandia.com/images/logo.png">
-
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #f2f2f2;
-        }
-        .navbar {
-            background-color: #28a745; /* Verde */
-        }
-        .nav-link {
-            color: #ffffff;
-        }
-        .nav-link:hover {
-            color: #28a745;
-        }
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .game-list {
-            list-style: none;
-            padding: 0;
-        }
-        .game-list li {
-            margin: 10px 0;
-        }
-    </style>
+    <meta name="twitter:title" content="Imaginalândia - Jogos Educativos">
+    <meta name="twitter:description" content="Explore jogos educativos que estimulam a criatividade e o aprendizado infantil!">
+    <meta name="twitter:image" content="https://www.imaginalandia.com/images/jogos-banner.png">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Imaginalândia</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <a class="navbar-brand font-weight-bold" href="index.html">Imaginalândia</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="historias.html">Histórias</a></li>
-                <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="jogos.html">Jogos</a></li>
                 <li class="nav-item"><a class="nav-link" href="atividades.html">Atividades</a></li>
                 <li class="nav-item"><a class="nav-link" href="pais.html">Pais</a></li>
                 <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
@@ -61,19 +45,46 @@
             </ul>
         </div>
     </nav>
-    <div class="container content">
-        <h1>Jogos Educativos</h1>
-        <ul class="game-list">
-            <li><a href="jogo_memoria.html">Jogo da Memória</a></li>
-            <li><a href="jogo_palavras.html">Jogo das Palavras</a></li>
-            <li><a href="jogo_quebra_cabeca.html">Quebra-Cabeça</a></li>
-            <li><a href="jogo_labirinto.html">Labirinto</a></li>
-            <li><a href="jogo_contagem.html">Jogo de Contagem</a></li>
-			<li><a href="forca.html">Forca</a></li>
-        </ul>
+
+    <!-- Conteúdo Principal -->
+    <div class="container text-center mt-4">
+        <h1 class="mb-4 text-success">Jogos Educativos</h1>
+        <p class="lead">Escolha um jogo e divirta-se enquanto aprende!</p>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="jogo_memoria.html" class="btn btn-outline-success btn-block">Jogo da Memória</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="jogo_palavras.html" class="btn btn-outline-success btn-block">Jogo das Palavras</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="jogo_quebra_cabeca.html" class="btn btn-outline-success btn-block">Quebra-Cabeça</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="jogo_labirinto.html" class="btn btn-outline-success btn-block">Labirinto</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="jogo_contagem.html" class="btn btn-outline-success btn-block">Jogo de Contagem</a>
+            </div>
+            <div class="col-md-6 col-lg-4 my-3">
+                <a href="forca.html" class="btn btn-outline-success btn-block">Forca</a>
+            </div>
+        </div>
     </div>
+
+    <!-- Botão de Modo Noturno -->
+    <button id="modeToggle" class="btn btn-secondary">Modo Noturno</button>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('modeToggle').addEventListener('click', function () {
+            document.body.classList.toggle('night-mode');
+        });
+    </script>
+
 </body>
 </html>
